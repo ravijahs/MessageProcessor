@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy name="MessageStoreProxy" startOnLoad="true" transports="http https" xmlns="http://ws.apache.org/ns/synapse">
+    <target>
+        <inSequence>
+          <property name="FORCE_SC_ACCEPTED" value="true" scope="axis2"/>
+          <property name="OUT_ONLY" value="true"/>
+          <property name="target.endpoint" value="StockQuoteServiceEp"/>
+          <store messageStore="SampleStore"/>
+      </inSequence>
+    </target>
+    <publishWSDL uri="/home/ravija/Downloads/sample_proxy_1.wsdl"/>
+</proxy>
